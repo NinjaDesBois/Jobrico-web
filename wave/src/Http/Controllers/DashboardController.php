@@ -3,6 +3,9 @@
 namespace Wave\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Wave\Category;
+use Wave\Post;
 
 class DashboardController extends \App\Http\Controllers\Controller
 {
@@ -22,7 +25,16 @@ class DashboardController extends \App\Http\Controllers\Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('theme::dashboard.index');
+    {    
+        $posts = Post::orderBy('created_at', 'DESC')->paginate(6);
+        $categories = Category::all();
+        $user = Auth::user();
+
+    	$seo = [
+    		'seo_title' => 'Blog',
+            'seo_description' => 'Our Blog',
+       	];
+           return view('theme::dashboard.index',compact('posts', 'categories', 'seo' , 'user'));
+
     }
 }

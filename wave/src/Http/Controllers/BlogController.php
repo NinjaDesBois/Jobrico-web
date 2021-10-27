@@ -41,7 +41,7 @@ class BlogController extends \App\Http\Controllers\Controller
 
         $seo = [
             'seo_title' => $post->title,
-            'seo_description' => $post->seo_description,
+            'seo_description' => $post->seo_description
         ];
 
     	return view('theme::blog.post', compact('post', 'seo'));

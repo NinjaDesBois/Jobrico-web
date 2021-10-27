@@ -25,14 +25,14 @@
                                     C'est votre premiere fois sur la Plateforme ?Rassurez-vous nous vous accompagnerons pas à pas dans votre recherche
                                 </p>
                             </a>
-                            <a href="https://devdojo.com/course/wave" target="_blank" class="block px-5 py-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-xl hover:bg-gray-100">
+                            {{-- <a href="https://devdojo.com/course/wave" target="_blank" class="block px-5 py-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-xl hover:bg-gray-100">
                                 <p class="text-base font-medium leading-6 text-gray-900">
                                     Videos
                                 </p>
                                 <p class="text-xs leading-5 text-gray-500">
-                                    Watch videos to learn how to use Wave.
+                                    Regardez nos videos pour apprendre pas à pas a trouver un jobber .
                                 </p>
-                            </a>
+                            </a> --}}
                             <a href="{{ route('wave.blog') }}" class="block px-5 py-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-xl hover:bg-gray-100">
                                 <p class="text-base font-medium leading-6 text-gray-900">
                                     Les Categories
@@ -85,7 +85,7 @@
                             {{ auth()->user()->name }}
                         </span>
                         <span class="text-xs leading-5 text-gray-600">
-                            View Profile
+                            Voir Profil
                         </span>
                     </a>
                     @impersonating
@@ -95,7 +95,7 @@
                     <div class="py-1">
 
                         <div class="block px-4 py-1">
-                            <span class="inline-block px-2 my-1 -ml-1 text-xs font-medium leading-5 text-gray-600 bg-gray-200 rounded">{{ auth()->user()->role->display_name }}</span>
+                            <span class="inline-block px-2 my-1 -ml-1 text-xs font-medium leading-5 text-gray-600 bg-gray-200 rounded">{{ auth()->user()->user_type}}</span>
                         </div>
                         @trial
                             <a href="{{ route('wave.settings', 'plans') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">Upgrade My Account</a>

@@ -21,7 +21,7 @@
                             </a>
                         </div>
                         <div class="mt-3 sm:mt-0 sm:ml-3">
-                            <a href="#"  class="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-indigo-700 transition duration-150 ease-in-out bg-indigo-100 border-2 border-transparent rounded-md hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 md:py-4 md:text-lg md:px-10">
+                            <a href="#how-work"  class="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-indigo-700 transition duration-150 ease-in-out bg-indigo-100 border-2 border-transparent rounded-md hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 md:py-4 md:text-lg md:px-10">
                                 Comment ça marche ?
                             </a>
                           
@@ -31,12 +31,14 @@
 
                 <div class="flex w-full mb-16 lg:w-1/2 lg:mb-0">
 
-                    <div class="relative invisible transition-none duration-1000 delay-100 transform translate-x-12 opacity-0" data-replace='{ "transition-none": "transition-all", "invisible": "visible", "translate-x-12": "translate-y-0", "opacity-0": "opacity-100" }'>
-                        <img src="{{asset('JgAsV8PeqfWTAEfWgxqN.PNG')}}" class="w-full max-w-3xl sm:w-auto card" style="border-radius: 3%">
+                    <div class="relative invisible transition-none duration-1000 delay-100 transform translate-x-12 opacity-0" data-replace='{ "transition-none": "transition-all", "invisible": "visible", "translate-x-12": "translate-y-0", "opacity-0": "opacity-100" }' >
+                        <img src="{{asset('images/pngegg.PNG')}}" class="w-full max-w-3xl sm:w-auto card" style="border: none ; width:600px;height:600px;" >
                     </div>
 
                 </div>
+                
             </div>
+            
         </div>
 
 
@@ -55,7 +57,7 @@
         </svg>
     </div>
 
-    {{-- FEATURES SECTION --}}
+    {{-- FEATURES SECTION Start--}}
     <section class="relative z-40 w-full pt-10 pb-16 lg:pt-5 xl:-mt-24 bg-gradient-to-b from-wave-500 via-wave-600 to-wave-400">
 
         <div class="absolute top-0 left-0 z-10 w-full h-full transform -translate-x-1/2 opacity-10">
@@ -63,9 +65,62 @@
         </div>
 
         <div class="relative z-20 flex flex-col items-start justify-start px-8 mx-auto sm:items-center max-w-7xl xl:px-5">
-            <h2 class="text-4xl font-medium leading-9 text-white">Nos Catégories de services</h2>
-            <p class="mt-4 leading-6 sm:text-center text-wave-200">Inscrivez-vous en temps que jobber pour effectuer des contrats ou solliccitez l'aide des jobbers inscris la plateforme pour vous aider dans vos tâches quotidiennes<br class="hidden md:block"></p>
+           {{-- Search Section --}}
+            <section class="hero-section">
+                <div class="layer">
+                   
+                    <div class="home-banner"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12">
+                                <div class="section-search">
+                                    <h3>Le meilleur endroit pour un <span>M3alem</span> c'est ici !</h3>
+                                    <p>Cherchez à travers plus de 30 villes Marocaine le jobber qui vous convient</p>
+                                    <div class="search-box">
+                                        <form action="https://truelysell-html.dreamguystech.com/template/search.html">
+                                            <div class="search-input line">
+                                                <i class="fas fa-tv bficon"></i>
+                                                <div class="form-group mb-0">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="De quoi avez-vous besoin?">
+                                                </div>
+                                            </div>
+                                            <div class="search-input">
+                                                <i class="fas fa-location-arrow bficon"></i>
+                                                <div class="form-group mb-0">
+                                                    <input type="text" class="form-control" placeholder="Votre ville">
+                                                    <a class="current-loc-icon current_location"
+                                                        href="javascript:void(0);"><i class="fas fa-crosshairs"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="search-btn">
+                                                <button class="btn search_service" type="submit">Chercher</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    {{-- <div class="search-cat">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Les plus recherchés</span>
+                                        <a href="#">Electricite</a>
+                                        <a href="#">Plomberie</a>
+                                       
+                                    </div> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- end Search Section --}}
+                </div>
+            </section>
+    {{-- end Search Section --}}
 
+
+            {{-- <h2 class="text-4xl font-medium leading-9 text-white">Nos Catégories de services</h2> --}}
+            {{-- <p class="mt-4 leading-6 sm:text-center text-wave-200">Inscrivez-vous en temps que jobber pour effectuer des contrats ou solliccitez l'aide des jobbers inscris la plateforme pour vous aider dans vos tâches quotidiennes<br class="hidden md:block"></p> --}}
+
+
+
+           
             <div class="grid mt-16 gap-y-10 sm:grid-cols-2 sm:gap-x-8 md:gap-x-12 lg:grid-cols-3 xl:grid-cols-4 lg:gap-20">
                 @foreach(config('features') as $feature)
                     <div class="transition duration-700 ease-in-out transform hover:scale-125">
@@ -77,6 +132,7 @@
             </div>
 
         </div>
+        
     </section>
 
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" class="bg-gray-100" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -91,6 +147,62 @@
             <path class="wave-svg-lighter" d="M685.6,30.8323303 C418.7,-19.0491687 170.2,1.94304528 0,22.035593 L0,118 L1440,118 L1440,22.035593 C1252.7,44.2273621 1010,91.4098622 685.6,30.8323303 Z" transform="translate(720.000000, 59.000000) scale(1, -1) translate(-720.000000, -59.000000) "></path>
         </g>
     </svg>
+ {{-- FEATURES SECTION END --}}
+
+
+ {{-- COMMENT CA MARCHE SECTION START --}}
+
+    
+ <section class="how-work" id="how-work">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="heading howitworks">
+                    <h2>Comment ça marche</h2>
+                    <span>Choissisez votre pqr,is nos catégories de service et le tour est joué</span>
+                </div>
+                <div class="howworksec">
+                    <div class="row"  style="display: flex">
+                        <div class="col-lg-4 mx-auto">
+                            <div class="howwork">
+                                <div class="iconround">
+                                    <div class="steps">01</div>
+                                    <img src="assets/img/icon-1.png" alt="">
+                                </div>
+                                <h3>Choix</h3>
+                                <p>Choissisez votre ville ainsi que le job requis</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="howwork">
+                                <div class="iconround">
+                                    <div class="steps">02</div>
+                                    <img src="assets/img/icon-2.png" alt="">
+                                </div>
+                                <h3>Recherche</h3>
+                                <p>Parcourez la liste des Catégories et des jobbeurs<br> a proximite de votre domicile</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="howwork">
+                                <div class="iconround">
+                                    <div class="steps">03</div>
+                                    <img src="assets/img/icon-3.png" alt="">
+                                </div>
+                                <h3>Confirmation</h3>
+                                <p>Une fois le Job signé en ligne le Jobbeur se deplacera <br>chez vous pour honorer son contrat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section> 
+
+  {{-- COMMENT CA MARCHE SECTION END --}}
+
+
 
     <!-- BEGINNING OF TESTIMONIALS SECTION -->
     <div id="testimonials">
@@ -98,14 +210,14 @@
             <div class="max-w-6xl px-10 pb-20 mx-auto bg-gray-100">
                 <div class="flex flex-col items-center lg:flex-row">
                     <div class="flex flex-col justify-center w-full h-full mb-10 lg:pr-8 sm:w-4/5 md:items-center lg:mb-0 lg:items-start md:w-3/5 lg:w-1/2">
-                        <p class="mb-2 text-base font-medium tracking-tight uppercase text-wave-500">Our customers love our product</p>
+                        <p class="mb-2 text-base font-medium tracking-tight uppercase text-wave-500">Nos clients adorent Jobrico</p>
                         <h2
                             class="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:leading-none lg:text-5xl xl:text-6xl">
-                            Testimonials</h2>
-                        <p class="pr-5 my-6 text-lg text-gray-600 md:text-center lg:text-left">This is an example section of where you will add your testimonials for your Software as a Service.</p>
+                            Temoignages de nos clients et Jobbeur</h2>
+                        <p class="pr-5 my-6 text-lg text-gray-600 md:text-center lg:text-left">Lorem ipsum dolor sit amet consectetur  elit. ut perferendis magnam obcaecati eligendi non, facilis a aspernatur rem odio eos vitae iure unde ratione.</p>
                         <a href="#_"
-                            class="flex items-center justify-center px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out border border-transparent rounded-md shadow bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 focus:shadow-outline-wave md:py-4 md:text-lg md:px-10">View
-                            Case Studies</a>
+                            class="flex items-center justify-center px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out border border-transparent rounded-md shadow bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 focus:shadow-outline-wave md:py-4 md:text-lg md:px-10">
+                        Voir les avis</a>
                     </div>
                     <div class="w-full sm:w-4/5 lg:w-1/2">
                         <blockquote class="flex flex-row-reverse items-center justify-between w-full col-span-1 p-6 bg-white rounded-lg shadow sm:flex-row">

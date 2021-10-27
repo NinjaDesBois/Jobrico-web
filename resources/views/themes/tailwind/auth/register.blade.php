@@ -20,21 +20,35 @@
 
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <div class="px-4 py-8 bg-white border shadow border-gray-50 sm:rounded-lg sm:px-10">
-                <form role="form" method="POST" action="@if(setting('billing.card_upfront')){{ route('wave.register-subscribe') }}@else{{ route('register') }}@endif">
+                <form role="form" method="POST" action="{{ route('register') }}">
                     @csrf
                     <!-- If we want the user to purchase before they can create an account -->
 
                     <div class="pb-3 sm:border-b sm:border-gray-200">
                         <h3 class="text-lg font-medium leading-6 text-gray-900">
-                            Profile
+                            Profil
                         </h3>
                         <p class="max-w-2xl mt-1 text-sm leading-5 text-gray-500">
-                            Information about your account.
+                            Information sur votre compte.
                         </p>
                     </div>
 
                     @csrf
-
+                    
+                    <div class="mt-6">
+                        <label for="user_type" class="block text-sm font-medium leading-5 text-gray-700">
+                            S'inscrire en temps que :
+                        </label>
+                       
+                        <div class="mt-1">
+                            <select onChange="affiche(this.selectedIndex)"name="user_type" id="user_type" class="form-select form-select-sm  rounded-md shadow-sm" aria-label=".form-select-sm example">
+                                <option selected>Choisissez votre type d'inscription</option>
+                                <option value="client">Client</option>
+                                <option id='jobber' value="jobber">Jobber</option>
+                            </select>
+                        </div>
+                        
+                    </div>
                     <div class="mt-6">
                         <label for="name" class="block text-sm font-medium leading-5 text-gray-700">
                             Name
@@ -48,7 +62,7 @@
                             </div>
                         @endif
                     </div>
-
+                    
                     @if(setting('auth.username_in_registration') && setting('auth.username_in_registration') == 'yes')
                         <div class="mt-6">
                             <label for="username" class="block text-sm font-medium leading-5 text-gray-700">
@@ -67,7 +81,7 @@
 
                     <div class="mt-6">
                         <label for="email" class="block text-sm font-medium leading-5 text-gray-700">
-                            Email Address
+                             Addresse Email
                         </label>
                         <div class="mt-1 rounded-md shadow-sm">
                             <input id="email" type="email" name="email" value="{{ old('email') }}" required class="w-full form-input">
@@ -78,10 +92,24 @@
                             </div>
                         @endif
                     </div>
+                    
+                    <div class="mt-6">
+                        <label for="phone" class="block text-sm font-medium leading-5 text-gray-700">
+                            Numéro de téléphone
+                        </label>
+                        <div class="mt-1 rounded-md shadow-sm">
+                            <input id="phone" type="text" name="phone" value="{{ old('phone') }}" required class="w-full form-input">
+                        </div>
+                        @if ($errors->has('phone'))
+                            <div class="mt-1 text-red-500">
+                                {{ $errors->first('phone') }}
+                            </div>
+                        @endif
+                    </div>
 
                     <div class="mt-6">
                         <label for="password" class="block text-sm font-medium leading-5 text-gray-700">
-                            Password
+                            Mot de passe
                         </label>
                         <div class="mt-1 rounded-md shadow-sm">
                             <input id="password" type="password" name="password" required class="w-full form-input">
@@ -95,7 +123,7 @@
 
                     <div class="mt-6">
                         <label for="password_confirmation" class="block text-sm font-medium leading-5 text-gray-700">
-                            Confirm Password
+                            Confirmez votre Mot de passe
                         </label>
                         <div class="mt-1 rounded-md shadow-sm">
                             <input id="password_confirmation" type="password" name="password_confirmation" required class="w-full form-input">
@@ -106,6 +134,7 @@
                             </div>
                         @endif
                     </div>
+                   
 
                     <div class="flex flex-col items-center justify-center text-sm leading-5">
                         <span class="block w-full mt-5 rounded-md shadow-sm">

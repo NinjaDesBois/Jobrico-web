@@ -1,7 +1,7 @@
 <nav class="flex items-center justify-end flex-1 hidden w-full h-full space-x-10 md:flex">
     <div @mouseenter="dropdown = true" @mouseleave="dropdown=false" @click.away="dropdown=false" x-data="{ dropdown: false }" class="relative h-full select-none">
         <div :class="{ 'text-wave-600': dropdown, 'text-gray-500': !dropdown }" class="inline-flex items-center h-full space-x-2 text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out cursor-pointer select-none group hover:text-wave-600 focus:outline-none focus:text-wave-600">
-            <span>Product</span>
+            <span>Services Jobrico</span>
             <svg class="w-5 h-5 text-gray-400 transition duration-150 ease-in-out group-hover:text-wave-600 group-focus:text-wave-600" x-bind:class="{ 'text-wave-600': dropdown, 'text-gray-400': !dropdown }" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
             </svg>
@@ -21,18 +21,18 @@
 
                     <div class="flex flex-col">
                         <div class="flex h-full">
-                            <div class="relative flex flex-col items-start justify-start hidden w-full h-full max-w-xs bg-center bg-cover lg:block" style="background-image:url('https://cdn.devdojo.com/images/october2020/wave-menu-bg.jpeg')">
+                            <div class="relative flex flex-col items-start justify-start hidden w-full h-full max-w-xs bg-center bg-cover lg:block" style="background-image:('{{asset('images/Hero_Menu.jpg')}}')">
                                 <div class="relative flex flex-col items-start justify-center w-full h-full px-16 py-8">
 
                                     <img src="https://cdn.devdojo.com/images/april2021/wave-light-logo.png" class="z-20 w-auto h-10">
-                                    <h3 class="z-30 mt-1 mt-3 text-lg font-thin text-wave-200">The Software as a Service Starter Kit.</h3>
+                                    <h3 class="z-30 mt-1 mt-3 text-lg font-bold text-wave-200">Pourquoi chercher 12h à 14h quand on peux appeller le m3alem de son cartier en un clic !</h3>
 
-                                    <span class="relative z-20 inline-flex mt-5 rounded-md shadow-sm">
+                                    {{-- <span class="relative z-20 inline-flex mt-5 rounded-md shadow-sm">
                                         <a href="https://devdojo.com/wave" class="relative inline-flex items-center px-4 py-2 text-sm font-medium leading-5 transition duration-150 ease-in-out bg-white border border-transparent rounded-md text-wave-500 hover:bg-gray-100 focus:outline-none focus:border-gray-300 focus:shadow-outline-gray active:bg-gray-100">
                                             Get Wave Today
                                             <span class="absolute top-0 right-0 px-3 py-1 -mt-4 -mr-8 text-xs text-white rounded-full bg-wave-400">Version 2</span>
                                         </a>
-                                    </span>
+                                    </span> --}}
                                 </div>
                                 <div class="absolute inset-0 w-full h-full opacity-75 bg-wave-600"></div>
                                 <div class="absolute inset-0 w-full h-full opacity-75 bg-gradient-to-br from-wave-600 to-indigo-600"></div>
@@ -44,10 +44,10 @@
                                     </div>
                                     <div class="space-y-1">
                                         <p class="text-base font-medium leading-6 text-gray-900">
-                                            Authentication
+                                            Devenir Client
                                         </p>
                                         <p class="text-sm leading-5 text-gray-500">
-                                            Full authentication system including register, login, and lost password.
+                                            Inscrivez vous en 1 minute et acceddez a des centaines de jobber de votre ville
                                         </p>
                                     </div>
                                 </a>
@@ -57,10 +57,10 @@
                                     </div>
                                     <div class="space-y-1">
                                         <p class="text-base font-medium leading-6 text-gray-900">
-                                            Billing
+                                            Devenir Jobber
                                         </p>
                                         <p class="text-sm leading-5 text-gray-500">
-                                            Subscription billing built on top of Paddle
+                                          Inscrivez vous en temps que Jobber et commencez a gagner de l'argent des le premier jour !
                                         </p>
                                     </div>
                                 </a>
@@ -70,10 +70,10 @@
                                     </div>
                                     <div class="space-y-1">
                                         <p class="text-base font-medium leading-6 text-gray-900">
-                                            User Profiles
+                                            Nos Categories de Jobs
                                         </p>
                                         <p class="text-sm leading-5 text-gray-500">
-                                            User profiles with image uploading and profile settings functionality.
+                                            Plus d'une dizaine de jobs disponible dans votre ville.
                                         </p>
                                     </div>
                                 </a>
@@ -83,10 +83,10 @@
                                     </div>
                                     <div class="space-y-1">
                                         <p class="text-base font-medium leading-6 text-gray-900">
-                                            User Roles
+                                            Devenez partenaire
                                         </p>
                                         <p class="text-sm leading-5 text-gray-500">
-                                            User roles and permissions based on user plans.
+                                            Jobrico is looking for funding
                                         </p>
                                     </div>
                                 </a>
@@ -102,10 +102,10 @@
                                 </div>
                                 <div class="space-y-1">
                                     <p class="text-base font-medium leading-6 text-gray-900">
-                                        Notifications
+                                        Notifications et messagerie
                                     </p>
                                     <p class="text-sm leading-5 text-gray-500">
-                                        User notification system that's easy to implement in your SAAS.
+                                        Vous pouvez echanger via notre application  afin de bien cerner le problème avant toute intervention .Un systeme de notificationsvous aide a ne rater aucune offre
                                     </p>
                                 </div>
                             </a>
@@ -161,11 +161,11 @@
         </div>
     </div>
 
-    <a href="/#pricing" class="text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out hover:text-wave-600 focus:outline-none focus:text-wave-600">
-        Pricing
+    <a href="/" class="text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out hover:text-wave-600 focus:outline-none focus:text-wave-600">
+        Home
     </a>
     <a href="{{ route('wave.blog') }}" class="text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out hover:text-wave-600 focus:outline-none focus:text-wave-600">
-        Blog
+        Categories
     </a>
 
     <div @mouseenter="dropdown = true" @mouseleave="dropdown=false" @click.away="dropdown=false" x-data="{ dropdown: false }" class="relative h-full select-none">
@@ -200,7 +200,7 @@
                                 </p>
                             </div>
                         </a>
-                        <a href="https://devdojo.com/course/wave" target="_blank" class="flex items-start px-10 -m-3 space-x-3 transition duration-150 ease-in-out rounded-lg py-7 group">
+                        {{-- <a href="https://devdojo.com/course/wave" target="_blank" class="flex items-start px-10 -m-3 space-x-3 transition duration-150 ease-in-out rounded-lg py-7 group">
                             <svg class="flex-shrink-0 w-6 h-6 text-gray-500 duration-200 group-hover:text-gray-800 transition-color ease" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>
                             <div class="space-y-1">
                                 <p class="text-base font-medium leading-6 text-gray-700 duration-200 group-hover:text-gray-900 transition-color ease">
@@ -210,12 +210,12 @@
                                     A series of videos to help you get started.
                                 </p>
                             </div>
-                        </a>
+                        </a> --}}
                         <a href="{{ route('wave.blog') }}" class="flex items-start px-10 pb-10 -m-3 space-x-3 transition duration-150 ease-in-out rounded-lg pt-7 group">
                             <svg class="flex-shrink-0 w-6 h-6 text-gray-500 duration-200 group-hover:text-gray-800 transition-color ease" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"></path><path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path></svg>
                             <div class="space-y-1">
                                 <p class="text-base font-medium leading-6 text-gray-700 duration-200 group-hover:text-gray-900 transition-color ease">
-                                    Blog
+                                    Categories
                                 </p>
                                 <p class="text-xs font-normal leading-5 text-gray-500 duration-200 group-hover:text-gray-700 transition-color ease">
                                     Wave comes with a full blogging platform
@@ -230,11 +230,11 @@
 
     <div class="w-1 h-5 mx-10 border-r border-gray-300"></div>
     <a href="{{ route('login') }}" class="text-base font-medium leading-6 text-gray-500 whitespace-no-wrap hover:text-wave-600 focus:outline-none focus:text-gray-900">
-        Sign in
+        Se Connecter
     </a>
     <span class="inline-flex rounded-md shadow-sm">
         <a href="{{ route('register') }}" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out border border-transparent rounded-md bg-wave-500 hover:bg-wave-600 focus:outline-none focus:border-indigo-700 focus:shadow-outline-wave active:bg-wave-700">
-            Sign up
+            S'enregistrer
         </a>
     </span>
 </nav>

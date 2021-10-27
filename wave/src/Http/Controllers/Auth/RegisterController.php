@@ -62,14 +62,20 @@ class RegisterController extends \App\Http\Controllers\Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
                 'username' => 'required|string|max:20|unique:users',
-                'password' => 'required|string|min:6|confirmed'
+                'password' => 'required|string|min:6|confirmed',
+                'phone' => 'required',
+                'user_type'=>'required',
+                
             ]);
         }
 
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed'
+            'password' => 'required|string|min:6|confirmed',
+            'phone' => 'required',
+            'user_type'=>'required',
+            
         ]);
     }
 
@@ -81,6 +87,8 @@ class RegisterController extends \App\Http\Controllers\Controller
      */
     public function create(array $data)
     {
+
+       
         $role = \TCG\Voyager\Models\Role::where('name', '=', config('voyager.user.default_role'))->first();
 
         $verification_code = NULL;
@@ -119,16 +127,19 @@ class RegisterController extends \App\Http\Controllers\Controller
             'email' => $data['email'],
             'username' => $username,
             'password' => bcrypt($data['password']),
-            'role_id' => $role->id,
+            // 'role_id' => $role->id,
             'verification_code' => $verification_code,
             'verified' => $verified,
-            'trial_ends_at' => $trial_ends_at
+            'trial_ends_at' => $trial_ends_at,
+            'user_type'=>$data['user_type'],
+            
+            'phone' =>$data['phone'],
         ]);
 
         if(setting('auth.verify_email', false)){
             $this->sendVerificationEmail($user);
         }
-
+      
         return $user;
     }
 
@@ -144,12 +155,16 @@ class RegisterController extends \App\Http\Controllers\Controller
             $request->validate([
                 'name' => 'required|string|min:3|max:255',
                 'username' => 'required|string|max:20|unique:users,username,' . auth()->user()->id,
-                'password' => 'required|string|min:6'
+                'password' => 'required|string|min:6',
+                'phone' => 'required',
+                
             ]);
         } else {
             $request->validate([
                 'name' => 'required|string|min:3|max:255',
-                'password' => 'required|string|min:6'
+                'password' => 'required|string|min:6',
+                'phone' => 'required',
+                
             ]);
         }
 
@@ -158,11 +173,13 @@ class RegisterController extends \App\Http\Controllers\Controller
         $user->name = $request->name;
         $user->username = $request->username;
         $user->password = bcrypt($request->password);
+        $user->phone = $request->phone;
+        
         $user->save();
 
-
+        if($user->user_type === 'client'){
         return redirect()->route('wave.dashboard')->with(['message' => 'Successfully updated your profile information.', 'message_type' => 'success']);
-
+    }
     }
 
     private function sendVerificationEmail($user){
